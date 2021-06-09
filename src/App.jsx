@@ -1,7 +1,33 @@
 import React from "react";
+import { ThemeProvider } from "styled-components";
+
+import Navbar from "./components/Navbar";
+import GlobalStyle from "./globalStyles";
+import Home from "./pages/Home";
+import UrlShortener from "./pages/Home/components/UrlShortener";
+
+const theme = {
+	primaryColor1: "#2acfcf",
+	primaryColor2: "#3b3054",
+	primaryLightColor: "#9AE3E0",
+	secondaryColor: "#f46262",
+	neutralColor1: "#bfbfbf",
+	neutralColor2: "#9e9aa7",
+	neutralColor3: "#35323e",
+	neutralColor4: "#232127",
+};
 
 const App = () => {
-	return <div>Shortly</div>;
+	return (
+		<React.Fragment>
+			<GlobalStyle />
+			<ThemeProvider theme={theme}>
+				<Navbar />
+				<Home />
+				<UrlShortener />
+			</ThemeProvider>
+		</React.Fragment>
+	);
 };
 
 export default App;
