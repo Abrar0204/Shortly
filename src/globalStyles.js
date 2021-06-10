@@ -9,11 +9,20 @@ const GlobalStyle = createGlobalStyle`
     html{
         font-size: 62.5%;
         overflow-x: hidden;
+        @media (min-width: 2560px) {
+            font-size: 100%;
+	    }
+        @media (min-width: 3840px) {
+            font-size: 150%;
+	    }
         @media (max-width: 1005px) {
             font-size: 55%;
 	    }
         @media (max-width: 770px) {
             font-size: 52%;
+	    }
+        @media (max-width: 400px) {
+		    flex-size: 47%
 	    }
     }
     body{

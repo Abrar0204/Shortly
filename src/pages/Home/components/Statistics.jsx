@@ -64,6 +64,9 @@ const Card = styled.div`
 	h3 {
 		margin-bottom: 2rem;
 	}
+	p {
+		font-size: 1.6rem;
+	}
 `;
 
 const Icon = styled.div`

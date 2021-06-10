@@ -35,21 +35,22 @@ const HeaderImg = styled.img`
 	top: 40%;
 	transform: translateY(-50%);
 	right: -12rem;
+	width: 75rem;
 	@media (max-width: 1250px) {
-		width: 60%;
+		width: 60rem;
 	}
 	@media (max-width: 885px) {
-		width: 58%;
+		width: 55rem;
 	}
 	@media (max-width: 735px) {
 		order: 1;
 		position: relative;
 		top: 3rem;
 		transform: translateY(0);
-		width: 100%;
+		width: 80rem;
 	}
 	@media (max-width: 615px) {
-		width: 100%;
+		width: 60rem;
 	}
 `;
 
