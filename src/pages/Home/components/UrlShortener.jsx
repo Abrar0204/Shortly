@@ -137,13 +137,8 @@ const CopyButton = styled(Button)`
 
 const UrlShortener = () => {
 	const [url, setUrl] = useState("");
-	const [shortenUrls, setShortenUrls] = useState([
-		{
-			full: "https://abrarhasan.me",
-			short: "https://shrtco.de/qJyTeK",
-			copied: false,
-		},
-	]);
+	const [shortenUrls, setShortenUrls] = useState([]);
+	const [loading, setLoading] = useState(false);
 	const [err, setErr] = useState("");
 
 	const handleInput = e => {
@@ -153,6 +148,10 @@ const UrlShortener = () => {
 
 	const shortenUrl = async ev => {
 		ev.preventDefault();
+		if (loading) {
+			return;
+		}
+		setLoading(true);
 		try {
 			if (url === "") {
 				return setErr("Please add a link.");
@@ -169,7 +168,10 @@ const UrlShortener = () => {
 					copied: false,
 				},
 			]);
+			setLoading(false);
+			setUrl("");
 		} catch (err) {
+			setLoading(false);
 			setErr("Something went wrong try again.");
 			console.error(err);
 		}
@@ -178,6 +180,17 @@ const UrlShortener = () => {
 	const copyUrl = async shortUrl => {
 		try {
 			await navigator.clipboard.writeText(shortUrl);
+			setTimeout(
+				() =>
+					setShortenUrls(prev =>
+						prev.map(url =>
+							url.short === shortUrl
+								? { ...url, copied: false }
+								: url
+						)
+					),
+				10000
+			);
 			setShortenUrls(prev =>
 				prev.map(url =>
 					url.short === shortUrl ? { ...url, copied: true } : url
@@ -199,7 +212,7 @@ const UrlShortener = () => {
 						placeholder="Shorten a link here ..."
 					></Input>
 					<ShortenButton filled type="submit">
-						Shorten It!
+						{loading ? "Shortening..." : "Shorten It!"}
 					</ShortenButton>
 				</Form>
 				{err && <Error>{err}</Error>}

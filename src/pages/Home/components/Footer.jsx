@@ -69,6 +69,7 @@ const FooterNavList = styled.div`
 		margin-bottom: 0.5rem;
 		&:hover {
 			cursor: pointer;
+			color: ${props => props.theme.primaryColor1};
 		}
 	}
 	@media (max-width: 735px) {
