@@ -15,12 +15,27 @@ const GlobalStyle = createGlobalStyle`
         font-size: 1.8rem;
         font-weight: 400;
         color: #9e9aa7;
+        background-color: #F0F1F6;
     }
     button{
         font-size: 1.8rem;
         font-family: 'Poppins',sans-serif;
         border: none;
         outline: none;
+        &:hover {
+		    cursor: pointer;
+	    }
+    }
+    
+    input{
+        font-size: 1.6rem;
+        font-family: 'Poppins',sans-serif;
+        border: none;
+	    outline: none;
+	    &:focus {
+		    border: none;
+		    outline: none;
+	    }
     }
     h1,h2,h3,h4,h5,h6{
         color: #35323e;

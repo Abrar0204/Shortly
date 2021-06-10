@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-
+import Button from "./Button";
 const Nav = styled.nav`
 	padding: 0rem 10rem;
 	height: 12vh;
 	display: flex;
 	align-items: center;
+	background-color: white;
 `;
 
 const NavGroup = styled.div`
@@ -36,22 +37,6 @@ const NavItem = styled.div`
 	}
 `;
 
-const NavButton = styled.button`
-	color: ${props => (props.filled ? "#fff" : props.theme.primaryColor1)};
-	background-color: ${props =>
-		props.filled ? props.theme.primaryColor1 : "transparent"};
-	padding: 1rem 2.5rem;
-	margin: 0rem 1rem;
-	font-weight: 500;
-	font-size: 1.8rem;
-	border-radius: ${props => (props.pill ? "1000px" : "10px")};
-	&:hover {
-		cursor: pointer;
-		background-color: ${props =>
-			props.filled ? props.theme.primaryLightColor : "transparent"};
-	}
-`;
-
 const Navbar = () => {
 	return (
 		<Nav>
@@ -63,10 +48,8 @@ const Navbar = () => {
 					<NavItem>Resources</NavItem>
 				</NavItemList>
 				<NavItemList>
-					<NavButton>Login</NavButton>
-					<NavButton filled pill>
-						Sign Up
-					</NavButton>
+					<Button text>Login</Button>
+					<Button pill>Sign Up</Button>
 				</NavItemList>
 			</NavGroup>
 		</Nav>

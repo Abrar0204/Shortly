@@ -1,10 +1,8 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-
 import Navbar from "./components/Navbar";
 import GlobalStyle from "./globalStyles";
 import Home from "./pages/Home";
-import UrlShortener from "./pages/Home/components/UrlShortener";
 
 const theme = {
 	primaryColor1: "#2acfcf",
@@ -24,7 +22,6 @@ const App = () => {
 			<ThemeProvider theme={theme}>
 				<Navbar />
 				<Home />
-				<UrlShortener />
 			</ThemeProvider>
 		</React.Fragment>
 	);

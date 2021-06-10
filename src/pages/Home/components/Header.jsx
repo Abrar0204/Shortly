@@ -1,12 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import headerImageSrc from "../../../assets/images/illustration-working.svg";
+import Button from "../../../components/Button";
 
-const HeaderContainer = styled.header`
+const Container = styled.header`
 	display: flex;
 	align-items: center;
-	padding: 0rem 14rem;
+	padding: 0rem 14rem 14rem 14rem;
+
 	position: relative;
+	background-color: white;
 `;
 
 const MainContent = styled.div`
@@ -19,7 +22,7 @@ const MainContent = styled.div`
 
 const HeaderImg = styled.img`
 	position: absolute;
-	top: 50%;
+	top: 40%;
 	transform: translateY(-50%);
 	right: -12rem;
 `;
@@ -35,25 +38,9 @@ const Description = styled.p`
 	width: 50%;
 `;
 
-const Button = styled.button`
-	color: ${props => (props.filled ? "#fff" : props.theme.primaryColor1)};
-	background-color: ${props =>
-		props.filled ? props.theme.primaryColor1 : "transparent"};
-	padding: 1.5rem 4rem;
-	margin: 3rem 0rem;
-	font-weight: 500;
-	font-size: 2.4rem;
-	border-radius: ${props => (props.pill ? "1000px" : "10px")};
-	&:hover {
-		cursor: pointer;
-		background-color: ${props =>
-			props.filled ? props.theme.primaryLightColor : "transparent"};
-	}
-`;
-
 const Header = () => {
 	return (
-		<HeaderContainer>
+		<Container>
 			<MainContent>
 				<Heading>More than just shorter links</Heading>
 				<Description>
@@ -65,7 +52,7 @@ const Header = () => {
 				</Button>
 			</MainContent>
 			<HeaderImg src={headerImageSrc} alt="header-working"></HeaderImg>
-		</HeaderContainer>
+		</Container>
 	);
 };
 
