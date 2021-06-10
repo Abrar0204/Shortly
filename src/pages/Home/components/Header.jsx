@@ -6,10 +6,16 @@ import Button from "../../../components/Button";
 const Container = styled.header`
 	display: flex;
 	align-items: center;
-	padding: 0rem 14rem 14rem 14rem;
+	padding: 0rem 14rem 140px 14rem;
 
 	position: relative;
 	background-color: white;
+	@media (max-width: 1250px) {
+		padding: 0rem 5rem 140px 5rem;
+	}
+	@media (max-width: 735px) {
+		flex-direction: column;
+	}
 `;
 
 const MainContent = styled.div`
@@ -18,6 +24,10 @@ const MainContent = styled.div`
 	flex-direction: column;
 	align-items: flex-start;
 	width: 100%;
+	@media (max-width: 735px) {
+		order: 2;
+		align-items: center;
+	}
 `;
 
 const HeaderImg = styled.img`
@@ -25,17 +35,48 @@ const HeaderImg = styled.img`
 	top: 40%;
 	transform: translateY(-50%);
 	right: -12rem;
+	@media (max-width: 1250px) {
+		width: 60%;
+	}
+	@media (max-width: 885px) {
+		width: 58%;
+	}
+	@media (max-width: 735px) {
+		order: 1;
+		position: relative;
+		top: 3rem;
+		transform: translateY(0);
+		width: 100%;
+	}
+	@media (max-width: 615px) {
+		width: 100%;
+	}
 `;
 
 const Heading = styled.h1`
 	font-size: 8rem;
 	width: 50%;
 	line-height: 1.2;
+	@media (max-width: 1250px) {
+		font-size: 6rem;
+		width: 60%;
+	}
+	@media (max-width: 735px) {
+		width: 100%;
+		text-align: center;
+	}
 `;
 
 const Description = styled.p`
 	font-size: 2.4rem;
 	width: 50%;
+	@media (max-width: 1250px) {
+		font-size: 2rem;
+	}
+	@media (max-width: 735px) {
+		width: 100%;
+		text-align: center;
+	}
 `;
 
 const Header = () => {

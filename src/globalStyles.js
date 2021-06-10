@@ -9,6 +9,12 @@ const GlobalStyle = createGlobalStyle`
     html{
         font-size: 62.5%;
         overflow-x: hidden;
+        @media (max-width: 1005px) {
+            font-size: 55%;
+	    }
+        @media (max-width: 770px) {
+            font-size: 52%;
+	    }
     }
     body{
         font-family: 'Poppins',sans-serif;

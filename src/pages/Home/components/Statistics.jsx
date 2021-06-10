@@ -9,6 +9,10 @@ const Container = styled.div`
 	padding: 0rem 12rem;
 	display: flex;
 	flex-direction: column;
+	@media (max-width: 1250px) {
+		padding: 0rem 3rem;
+		margin: 3rem 0rem;
+	}
 `;
 
 const Heading = styled.div`
@@ -31,6 +35,9 @@ const CardGroup = styled.div`
 	display: flex;
 	align-items: center;
 	position: relative;
+	@media (max-width: 875px) {
+		flex-direction: column;
+	}
 `;
 const BackgroundLine = styled.div`
 	margin: 0rem 5rem;
@@ -38,6 +45,11 @@ const BackgroundLine = styled.div`
 	width: 80%;
 	background-color: ${props => props.theme.primaryColor1};
 	position: absolute;
+	@media (max-width: 875px) {
+		margin: 5rem 0rem;
+		width: 1.2rem;
+		height: 100%;
+	}
 `;
 
 const Card = styled.div`

@@ -9,6 +9,7 @@ const Button = styled.button`
 	font-weight: 500;
 	font-size: ${props => (props.large ? "2.4rem" : "1.8rem")};
 	border-radius: ${props => (props.pill ? "1000px" : "10px")};
+	font-weight: 700;
 	&:hover {
 		background-color: ${props =>
 			props.text ? "transparent" : props.theme.primaryLightColor};
