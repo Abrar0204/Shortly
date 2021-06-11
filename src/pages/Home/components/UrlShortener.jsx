@@ -152,6 +152,9 @@ const UrlShortener = () => {
 
 	const getShortenedUrlsFromStorage = () => {
 		const stringifiedUrl = localStorage.getItem("shortenedURLs");
+		if (stringifiedUrl === null) {
+			return;
+		}
 		const urls = JSON.parse(stringifiedUrl);
 		setShortenUrls(urls);
 	};
