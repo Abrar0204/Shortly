@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Button from "../../../components/Button";
 import shortenDesktopBG from "../../../assets/images/bg-shorten-desktop.svg";
@@ -141,9 +141,19 @@ const UrlShortener = () => {
 	const [loading, setLoading] = useState(false);
 	const [err, setErr] = useState("");
 
+	useEffect(() => {
+		getShortenedUrlsFromStorage();
+	}, []);
+
 	const handleInput = e => {
 		const { value } = e.target;
 		setUrl(value);
+	};
+
+	const getShortenedUrlsFromStorage = () => {
+		const stringifiedUrl = localStorage.getItem("shortenedURLs");
+		const urls = JSON.parse(stringifiedUrl);
+		setShortenUrls(urls);
 	};
 
 	const shortenUrl = async ev => {
@@ -160,14 +170,16 @@ const UrlShortener = () => {
 				`https://api.shrtco.de/v2/shorten?url=${url}`
 			);
 			const data = await res.json();
-			setShortenUrls(prev => [
-				...prev,
-				{
-					full: data.result.original_link,
-					short: data.result.full_short_link,
-					copied: false,
-				},
-			]);
+			const urlData = {
+				full: data.result.original_link,
+				short: data.result.full_short_link,
+				copied: false,
+			};
+			localStorage.setItem(
+				"shortenedURLs",
+				JSON.stringify([...shortenUrls, urlData])
+			);
+			setShortenUrls(prev => [...prev, urlData]);
 			setLoading(false);
 			setUrl("");
 		} catch (err) {
