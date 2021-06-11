@@ -100,7 +100,7 @@ const Statistics = () => {
 				"Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.",
 		},
 		{
-			icons: CustomaizableIcon,
+			icon: CustomaizableIcon,
 			title: "Fully Customizable",
 			description:
 				"Improve brand awareness and content discoverability through customizable links, supercharging audience engagement.",
