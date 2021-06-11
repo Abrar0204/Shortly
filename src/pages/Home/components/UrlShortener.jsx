@@ -164,11 +164,11 @@ const UrlShortener = () => {
 		if (loading) {
 			return;
 		}
-		setLoading(true);
 		try {
 			if (url === "") {
 				return setErr("Please add a link.");
 			}
+			setLoading(true);
 			const res = await fetch(
 				`https://api.shrtco.de/v2/shorten?url=${url}`
 			);

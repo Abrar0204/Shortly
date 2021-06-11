@@ -86,6 +86,26 @@ const Icon = styled.div`
 `;
 
 const Statistics = () => {
+	const data = [
+		{
+			icon: BrandIcon,
+			title: "Brand Recoginition",
+			description:
+				"Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil confidence in your content.",
+		},
+		{
+			icon: DetailedIcon,
+			title: "Detailed Records",
+			description:
+				"Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.",
+		},
+		{
+			icons: CustomaizableIcon,
+			title: "Fully Customizable",
+			description:
+				"Improve brand awareness and content discoverability through customizable links, supercharging audience engagement.",
+		},
+	];
 	return (
 		<Container>
 			<Heading>
@@ -97,41 +117,15 @@ const Statistics = () => {
 			</Heading>
 			<CardGroup>
 				<BackgroundLine />
-				<Card offset={0}>
-					<Icon>
-						<img src={BrandIcon} alt="Branded" />
-					</Icon>
-					<h3>Brand Recognition</h3>
-					<p>
-						Boost your brand recognition with each click. Generic
-						links don’t mean a thing. Branded links help instil
-						confidence in your content.
-					</p>
-				</Card>
-				<Card offset={1}>
-					<Icon>
-						<img src={DetailedIcon} alt="Detailed" />
-					</Icon>
-
-					<h3>Detailed Records</h3>
-					<p>
-						Gain insights into who is clicking your links. Knowing
-						when and where people engage with your content helps
-						inform better decisions.
-					</p>
-				</Card>
-				<Card offset={2}>
-					<Icon>
-						<img src={CustomaizableIcon} alt="Customaizable" />
-					</Icon>
-
-					<h3>Fully Customizable</h3>
-					<p>
-						Improve brand awareness and content discoverability
-						through customizable links, supercharging audience
-						engagement.
-					</p>
-				</Card>
+				{data.map(({ title, description, icon }, index) => (
+					<Card offset={index} key={title}>
+						<Icon>
+							<img src={icon} alt={title} />
+						</Icon>
+						<h3>{title}</h3>
+						<p>{description}</p>
+					</Card>
+				))}
 			</CardGroup>
 		</Container>
 	);
