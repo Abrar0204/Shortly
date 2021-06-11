@@ -6,15 +6,17 @@ import Button from "../../../components/Button";
 const Container = styled.header`
 	display: flex;
 	align-items: center;
-	padding: 0rem 14rem 140px 14rem;
+	padding: 0rem 14rem 14rem 14rem;
 
 	position: relative;
 	background-color: white;
+	overflow-x: hidden;
 	@media (max-width: 1250px) {
-		padding: 0rem 5rem 140px 5rem;
+		padding: 0rem 5rem 14rem 5rem;
 	}
 	@media (max-width: 735px) {
 		flex-direction: column;
+		padding: 0rem 5rem 14rem 5rem;
 	}
 `;
 

@@ -32,14 +32,14 @@ const Menu = styled.div`
 `;
 
 const NavGroup = styled.div`
-	width: 100%;
+	width: 100vw;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	@media (max-width: 735px) {
 		&.open {
-			left: 50%;
-			transform: translateX(-50%);
+			left: 0;
+			margin: 0rem 5vw;
 		}
 		position: fixed;
 		top: 12vh;
@@ -47,7 +47,7 @@ const NavGroup = styled.div`
 		z-index: 1000;
 		transition: 0.4s all ease-in;
 		height: 330px;
-		width: 90%;
+		width: 90vw;
 		padding: 3rem 0rem;
 		background-color: ${props => props.theme.primaryColor2};
 		border-radius: 5px;

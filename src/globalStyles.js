@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
             font-size: 52%;
 	    }
         @media (max-width: 400px) {
-		    flex-size: 47%
+		    font-size: 45%
 	    }
     }
     body{
