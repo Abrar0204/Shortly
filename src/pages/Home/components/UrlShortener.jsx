@@ -182,8 +182,10 @@ const UrlShortener = () => {
 				"shortenedURLs",
 				JSON.stringify([...shortenUrls, urlData])
 			);
+
 			setShortenUrls(prev => [...prev, urlData]);
 			setLoading(false);
+			setErr("");
 			setUrl("");
 		} catch (err) {
 			setLoading(false);
