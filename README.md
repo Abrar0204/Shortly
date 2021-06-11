@@ -2,7 +2,9 @@
 
 URL shortening website using the shrtcode API.
 
-## Technologies Used
+### Deployed [@shortly-assignment.netlify.app](https://shortly-assignment.netlify.app)
+
+## Technologies
 
 -   ReactJS
 -   Styled Components
